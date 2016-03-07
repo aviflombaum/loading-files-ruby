@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'irb'
+
+def reload!
+ load_all './lib'
+ # needs to not just re-load environment but rather reload everything in environment.
+
+
+end
+
+require_relative '../config/environment'
+
+puts "Welcome to Your Zoo Sandbox"
+IRB.start

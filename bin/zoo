@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+
+# Actually runs our Zoo Program - runtime / bin / executable /
+# MY ACTUAL PROGRAM THE THING USERS INTERACT WITH
+
+# How do we load the file in lib/cat.rb?
+# require_relative
+# require
+  # - it seems to look at directories that are in your $LOAD_PATH -
+
+# load
+# $LOAD_PATH << "/Users/avi/loading-files-ruby/lib"
+
+# require does not work with relative paths because your current directory is not in your $LOAD_PATH
+
+# require '../lib/cat' # because one, bin/zoo, so it should ../lib/cat - this is still relative...
+# require '/Users/avi/loading-files-ruby/lib/cat' # . the current directory
+# require '/Users/avi/loading-files-ruby/lib/bin/lib/cat' # . the current directory
+# require './lib/cat' # . the current directory
+# require_relative '../lib/cat'
+
+
+# Load my environment - the files I need to make this program work
+require_relative '../config/environment'
+
+# main scope
+
+puts ANIMALS
+
+cat = Cat.new
+fido = Dog.new
+cow = Cow.new
+bear = Bear.new
+puts "I am #{cat.object_id}"
+puts "I am #{fido.object_id}"
+puts "I am #{cow.object_id}"
+puts "I am #{bear.object_id}"
+
+# Rules of Thumb
+# Don't alter $LOAD_PATH
+# Use require to load gems only.
+
+# just use the require_all
